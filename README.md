@@ -1,2 +1,0 @@
-# AngularExercise
-Angular training exercises.
