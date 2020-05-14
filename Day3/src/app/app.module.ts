@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './components/productcompopnent/app.product.component';
 import { ProductReactiveFormComponent } from './components/productreactiveformcompopnent/app.productreactiveform.component';
 import { TableDirectiveComponent } from './directives/table.component.directive';
+import {DropdownComponent} from './directives/dropdown.component.directive';
 
 // imports: array that imports all standard Angular moaulds and custom
 // extenal modules for the current NG App.
@@ -28,7 +29,8 @@ import { TableDirectiveComponent } from './directives/table.component.directive'
   declarations: [
     AppComponent, ProductComponent,
     ProductReactiveFormComponent,
-    TableDirectiveComponent
+    TableDirectiveComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,

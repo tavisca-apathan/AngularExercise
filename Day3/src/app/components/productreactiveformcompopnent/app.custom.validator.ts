@@ -1,5 +1,5 @@
-import { AbstractControl } from '@angular/forms';
-
+import { AbstractControl, ValidatorFn } from '@angular/forms';
+import { Product } from '../../models/app.product';
 // custom validator class must contain static metyhod
 export class MyCustomValidator {
   // if the method is validated
@@ -16,4 +16,21 @@ export class MyCustomValidator {
        return {noteven:true}
      }
   }
+
+  static IsUnique( prds : Array<Product>) : ValidatorFn {
+      return (ctrl : AbstractControl) : any => 
+      { 
+         const id : number = parseInt(ctrl.value);
+         console.log(JSON.stringify(prds));
+         let val = prds.some( a => {return a.ProductId == id});
+         if(val == true) 
+         {
+            return  {isnotunique: val};
+         }
+         else
+         {
+            return null; 
+         }
+      }
+   }
 }

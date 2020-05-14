@@ -37,9 +37,13 @@ export class ProductReactiveFormComponent implements OnInit {
               Validators.minLength(2),
               Validators.maxLength(6),
               Validators.pattern('[0-9]+'),
-              MyCustomValidator.checkEven
+              MyCustomValidator.checkEven,
+              MyCustomValidator.IsUnique(this.logic.getProducts())
            ])),
-        ProductName: new FormControl(this.product.ProductName),
+        ProductName: new FormControl(this.product.ProductName,
+          Validators.compose([
+            Validators.pattern('^[A-Z][A-Za-z0-9]*')
+         ])),
         Price: new FormControl(this.product.Price),
         Category: new FormControl(this.product.Category)
       });
@@ -68,4 +72,9 @@ export class ProductReactiveFormComponent implements OnInit {
       console.log(JSON.stringify(evt));
       this.frmPrd.setValue(evt);
   }
+
+  getSelectedCategory(evt): void {
+    console.log(JSON.stringify(evt));
+    this.product.Category = evt;
+}
 }

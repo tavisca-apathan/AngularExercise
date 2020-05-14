@@ -1,0 +1,8 @@
+<div class="container">
+    <select>
+        <option *ngFor="let option of DataSource">
+               <input type="radio" name="category" (click)="onRowSelectedEvent(option)" value= {{option}}>{{option}}
+        </option> 
+    </select>
+</div>
+             <!-- [checked]="option.id == selectedOption.id" -->
