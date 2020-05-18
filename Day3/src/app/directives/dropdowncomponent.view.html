@@ -1,8 +1,22 @@
 <div class="container">
-    <select>
+    <select class="mdb-select colorful-select dropdown-primary md-form">
         <option *ngFor="let option of DataSource">
                <input type="radio" name="category" (click)="onRowSelectedEvent(option)" value= {{option}}>{{option}}
         </option> 
     </select>
 </div>
+<div class="btn-group dropdown todos" id="todos">
+<button class="btn btn-default dropdown-toggle botn-todos" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Todos
+    <span class="caret caret-posicion"></span>
+    </button>
+    <ul class="dropdown-menu ancho-todos" aria-labelledby="dropdownMenu1">
+      <li><a href="#" ><input value="1" name="busqueda1" type="radio" class="todoss"><span> Todos</span></a></li>
+      <li><a href="#"><input value="1" name="busqueda1" type="radio" class="enc"> En camino</a></li>
+      <li><a href="#"><input value="1" name="busqueda1" type="radio" class="enca"> En camino - 2do intento</a></li>
+      <li><a href="#"><input value="1" name="busqueda1" type="radio" class="entre"> Entregado</a></li>
+      <li><a href="#"><input value="1" name="busqueda1" type="radio" class="entre2"> Entregado al 2do intento</a></li>
+      <li><a href="#"><input value="1" name="busqueda1" type="radio" class="nose"> No se puede entregar</a></li>
+      <li><a href="#"><input value="1" name="busqueda1" type="radio" class="cancelado"> Cancelado</a></li>
+    </ul>
+  </div>
              <!-- [checked]="option.id == selectedOption.id" -->

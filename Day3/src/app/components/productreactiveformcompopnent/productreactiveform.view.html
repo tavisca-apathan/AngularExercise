@@ -26,12 +26,12 @@
             <label>Price</label>
             <input type="text" name="Price" formControlName="Price" class="form-control">
         </div>
-        <!-- <div class="form-group">
+        <div class="form-group">
             <label>Category</label>
         <select name="Category" formControlName="Category" class="form-control radio"  >
         <option clas="radio" *ngFor="let c of cats" value="{{c}}">{{c}}</option>
       </select>
-        </div> -->
+        </div>
         <dropdown-component-directive [DataSource]="cats" (onRowSelected)="getSelectedCategory($event)"></dropdown-component-directive>
         <div class="form-group">
             <!--Event Binding (click)-->
